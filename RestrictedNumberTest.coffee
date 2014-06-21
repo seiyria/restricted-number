@@ -141,16 +141,16 @@ describe 'RestrictedNumber', ->
 
 		describe 'Simple Percent Mutators', ->
 			it 'Should add percentage values correctly', ->
-				RN = new RestrictedNumber 0, 100, 50
-				RN.addPercent(5).getTotal().should.equal 55
+				RN = new RestrictedNumber 0, 200, 50
+				RN.addPercent(10).getTotal().should.equal 70
 
 			it 'Should sub percentage values correctly', ->
-				RN = new RestrictedNumber 0, 100, 50
-				RN.subPercent(5).getTotal().should.equal 45
+				RN = new RestrictedNumber 0, 200, 50
+				RN.subPercent(10).getTotal().should.equal 30
 
 			it 'Should set percentage values correctly', ->
-				RN = new RestrictedNumber 0, 100, 50
-				RN.setToPercent(10).getTotal().should.equal 10
+				RN = new RestrictedNumber 0, 200, 50
+				RN.setToPercent(10).getTotal().should.equal 20
 
 		describe 'Complex Value Mutators', ->
 			it 'Should add to both bound and current correctly', ->

@@ -47,11 +47,11 @@
       return this.sub(num);
     };
 
-    RestrictedNumber.prototype.toMaximum = function(num) {
+    RestrictedNumber.prototype.toMaximum = function() {
       return this.add(this.maximum);
     };
 
-    RestrictedNumber.prototype.toMinimum = function(num) {
+    RestrictedNumber.prototype.toMinimum = function() {
       return this.sub(this.maximum);
     };
 
@@ -92,11 +92,11 @@
     };
 
     RestrictedNumber.prototype.setToPercent = function(perc) {
-      return this.set(perc * this.maximum / 100);
+      return this.set(perc * (this.maximum - this.minimum) / 100);
     };
 
     RestrictedNumber.prototype.addPercent = function(perc) {
-      return this.add(perc * this.maximum / 100);
+      return this.add(perc * (this.maximum - this.minimum) / 100);
     };
 
     RestrictedNumber.prototype.subPercent = function(perc) {

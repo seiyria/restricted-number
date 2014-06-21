@@ -31,10 +31,10 @@ class RestrictedNumber
 		@minimum -= num
 		@sub num
 
-	toMaximum: (num) ->
+	toMaximum: () ->
 		@add @maximum
 
-	toMinimum: (num) ->
+	toMinimum: () ->
 		@sub @maximum
 
 	## Value checking functions (non-chainable)
@@ -60,10 +60,10 @@ class RestrictedNumber
 	## Setter percentage functions
 
 	setToPercent: (perc) ->
-		@set perc * @maximum / 100
+		@set perc * (@maximum - @minimum) / 100
 
 	addPercent: (perc) ->
-		@add perc * @maximum / 100
+		@add perc * (@maximum - @minimum) / 100
 
 	subPercent: (perc) ->
 		@addPercent -perc
