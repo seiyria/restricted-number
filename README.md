@@ -5,10 +5,25 @@ It also provides a `booster` utility to add extra data that doesn't count toward
 
 Why use this? It saves you from typing this over and over:
 
-```
+```js
 if(hp <= 0) hp=0; die();
 
 if(hp > maxHp) hp = maxHp
+```
+
+Here's an example usage for a player:
+```js
+var hp = new RestrictedNumber(0, 100, 100);
+
+if(hp.sub(20).atMin()) die();
+
+```
+
+Or maybe for AI:
+```js
+var hp = new RestrictedNumber(0, 100, 100);
+
+if(hp.ltePercent(66)) flee();
 ```
 
 ## Installation
