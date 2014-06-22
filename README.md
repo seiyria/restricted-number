@@ -1,6 +1,6 @@
 # restricted-number
 
-A nice little tool to keep your numbers in a certain range. This was primarily designed for game developers with datums like HP, MP, etc that should be kept within a range.
+A nice little tool to keep your numbers in a certain range. This was primarily designed for game developers with data like HP, MP, etc that should be kept within a range.
 It also provides a `booster` utility to add extra data that doesn't count towards the maximum, like a buff or debuff would.
 
 Why use this? It saves you from typing this over and over:
