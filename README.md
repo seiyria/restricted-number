@@ -6,7 +6,7 @@ It also provides a `booster` utility to add extra data that doesn't count toward
 Why use this? It saves you from typing this over and over:
 
 ```js
-if(hp <= 0) hp=0; die();
+if(hp <= 0) { hp=0; die(); }
 
 if(hp > maxHp) hp = maxHp
 ```
