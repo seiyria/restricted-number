@@ -77,8 +77,8 @@ Function | Description
  lessThan(num) | returns `true` if the datum is less than `num`
  lte(num) | returns `true` if the datum is less than `num`
  setToPercent(perc) | set the datum to be at `perc` (the range between min and max)
- addPercent(perc) | add `perc` of the datums `maximum` value to the datum
- subPercent(perc) | subtract `perc` of the datums `maximum` value from the datum
+ addPercent(perc) | add `perc` of the datum's `maximum` value to the datum
+ subPercent(perc) | subtract `perc` of the datum's `maximum` value from the datum
  asPercent() | get the value of the datum as a percentage
  greaterThanPercent(perc) | returns `true` if datum as a percentage of `maximum` is greater than `perc`
  gtePercent(perc) | returns `true` if datum as a percentage of `maximum` is greater than or equal to`perc`
