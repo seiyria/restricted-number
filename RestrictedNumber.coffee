@@ -32,10 +32,10 @@ class RestrictedNumber
 		@sub num
 
 	toMaximum: () ->
-		@add @maximum
+		@set @maximum
 
 	toMinimum: () ->
-		@sub @maximum
+		@set @maximum
 
 	## Value checking functions (non-chainable)
 
