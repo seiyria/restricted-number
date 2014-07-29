@@ -35,7 +35,7 @@ class RestrictedNumber
 		@set @maximum
 
 	toMinimum: () ->
-		@set @maximum
+		@set @minimum
 
 	## Value checking functions (non-chainable)
 
