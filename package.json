@@ -2,7 +2,7 @@
     "title": "restricted-number",
     "name": "restricted-number",
     "description": "a datum that keeps your numbers correctly within a range",
-    "version": "0.0.5",
+    "version": "1.0.0",
     "main": "index.js",
     "homepage": "https://github.com/seiyria/restricted-number",
     "bugs": "https://github.com/seiyria/restricted-number/issues",
@@ -15,7 +15,6 @@
     },
     "devDependencies": {
         "chai": "*",
-        "bower": "*",
         "mocha": "*",
         "coffee": "*",
         "coffee-script": "*",

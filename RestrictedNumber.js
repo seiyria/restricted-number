@@ -11,13 +11,13 @@
     RestrictedNumber.booster = 0;
 
     function RestrictedNumber(minimum, maximum, __current, booster) {
-      var _ref;
+      var ref;
       this.minimum = minimum;
       this.maximum = maximum;
       this.__current = __current != null ? __current : this.maximum;
       this.booster = booster != null ? booster : 0;
       if (this.minimum > this.maximum) {
-        _ref = [this.minimum, this.maximum], this.maximum = _ref[0], this.minimum = _ref[1];
+        ref = [this.minimum, this.maximum], this.maximum = ref[0], this.minimum = ref[1];
       }
       this.set(this.__current);
     }
@@ -48,11 +48,11 @@
     };
 
     RestrictedNumber.prototype.toMaximum = function() {
-      return this.add(this.maximum);
+      return this.set(this.maximum);
     };
 
     RestrictedNumber.prototype.toMinimum = function() {
-      return this.sub(this.maximum);
+      return this.set(this.minimum);
     };
 
     RestrictedNumber.prototype.getTotal = function() {

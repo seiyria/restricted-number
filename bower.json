@@ -1,7 +1,0 @@
-{
-	"name": "restricted-number",
-	"version": "0.0.5",
-	"dependencies": {
-		"coffee-script": ""
-	}
-}
