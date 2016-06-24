@@ -8,14 +8,11 @@
 
     RestrictedNumber.__current = 0;
 
-    RestrictedNumber.booster = 0;
-
-    function RestrictedNumber(minimum, maximum, __current, booster) {
+    function RestrictedNumber(minimum, maximum, __current) {
       var ref;
       this.minimum = minimum;
       this.maximum = maximum;
       this.__current = __current != null ? __current : this.maximum;
-      this.booster = booster != null ? booster : 0;
       if (this.minimum > this.maximum) {
         ref = [this.minimum, this.maximum], this.maximum = ref[0], this.minimum = ref[1];
       }
@@ -30,19 +27,25 @@
     };
 
     RestrictedNumber.prototype.add = function(num) {
+      if (this.__current + num > this.maxmimum) {
+        this._remainder = this.maximum - this.__current + num;
+      }
       return this.set(this.__current + num);
     };
 
     RestrictedNumber.prototype.sub = function(num) {
-      return this.add(-num);
+      if (this.__current - num < this.minimum) {
+        this._remainder = this.minimum - (this.__current - num);
+      }
+      return this.set(this.__current - num);
     };
 
-    RestrictedNumber.prototype.addAndBound = function(num) {
+    RestrictedNumber.prototype.addOverMaximum = function(num) {
       this.maximum += num;
       return this.add(num);
     };
 
-    RestrictedNumber.prototype.subAndBound = function(num) {
+    RestrictedNumber.prototype.subUnderMinimum = function(num) {
       this.minimum -= num;
       return this.sub(num);
     };
@@ -56,18 +59,18 @@
     };
 
     RestrictedNumber.prototype.getTotal = function() {
-      return this.__current + this.booster;
+      return this.__current;
     };
 
     RestrictedNumber.prototype.getValue = function() {
       return this.getTotal();
     };
 
-    RestrictedNumber.prototype.atMax = function() {
+    RestrictedNumber.prototype.atMaximum = function() {
       return this.maximum <= this.getTotal();
     };
 
-    RestrictedNumber.prototype.atMin = function() {
+    RestrictedNumber.prototype.atMinimum = function() {
       return this.minimum >= this.getTotal();
     };
 

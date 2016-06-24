@@ -64,13 +64,13 @@ Function | Description
  set(num) | set the datum to `num` - mostly used internally
  add(num) | add `num` to the datum
  sub(num) | subtract `num` from the datum
- addAndBound(num) | add `num` to both the datum and the range
- subAndBound(num) | subtract `num` from both the datum and the range
+ addOverMaximum(num) | add `num` to both the datum and the range
+ subUnderMinimum(num) | subtract `num` from both the datum and the range
  toMaximum() | set the datum to the max value
  toMinimum() | set the datum to the min value
  getTotal(), getValue() | get the current value of the datum
- atMax() | returns `true` if the datum is at the maximum
- atMin() | returns `true` if the datum is at the minimum
+ atMaximum() | returns `true` if the datum is at the maximum
+ atMinimum() | returns `true` if the datum is at the minimum
  equals(num) | returns `true` if the datum equals `num`
  greaterThan(num) | returns `true` if the datum is greater than `num`
  gte(num) | returns `true` if the datum is greater than or equal to `num`

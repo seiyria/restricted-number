@@ -3,9 +3,8 @@ class RestrictedNumber
 	@maximum 	= 0
 	@minimum 	= 0
 	@__current = 0
-	@booster 	= 0
 
-	constructor: (@minimum, @maximum, @__current = @maximum, @booster = 0) ->
+	constructor: (@minimum, @maximum, @__current = @maximum) ->
 		[@maximum, @minimum] = [@minimum, @maximum] if @minimum > @maximum
 		@set @__current
 
@@ -18,16 +17,18 @@ class RestrictedNumber
 		@
 
 	add: (num) ->
+		if @__current+num > @maxmimum then @_remainder = @maximum - @__current+num
 		@set @__current+num
 
 	sub: (num) ->
-		@add -num
+		if @__current-num < @minimum then @_remainder = @minimum - (@__current-num)
+		@set @__current-num
 
-	addAndBound: (num) ->
+	addOverMaximum: (num) ->
 		@maximum += num
 		@add num
 
-	subAndBound: (num) ->
+	subUnderMinimum: (num) ->
 		@minimum -= num
 		@sub num
 
@@ -39,13 +40,13 @@ class RestrictedNumber
 
 	## Value checking functions (non-chainable)
 
-	getTotal: () -> @__current + @booster
+	getTotal: () -> @__current
 
 	getValue: () -> @getTotal()
 
-	atMax: () -> @maximum <= @getTotal()
+	atMaximum: () -> @maximum <= @getTotal()
 
-	atMin: () -> @minimum >= @getTotal()
+	atMinimum: () -> @minimum >= @getTotal()
 
 	equals: (num) -> @getTotal() is num
 
