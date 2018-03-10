@@ -5,3 +5,4 @@
 *.spec*
 webpack.config.js
 tsconfig.json
+.travis.yml
