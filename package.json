@@ -1,9 +1,10 @@
 {
     "title": "restricted-number",
     "name": "restricted-number",
-    "description": "a datum that keeps your numbers correctly within a range",
-    "version": "1.1.0",
-    "main": "index.js",
+    "description": "A utility to keep numbers within a range.",
+    "version": "2.0.0",
+    "main": "./dist/index.js",
+    "typings": "./dist/src/index.d.ts",
     "homepage": "https://github.com/seiyria/restricted-number",
     "bugs": "https://github.com/seiyria/restricted-number/issues",
     "author": {
@@ -11,18 +12,15 @@
         "email": "kyle@seiyria.com"
     },
     "scripts": {
-        "test": "./node_modules/.bin/grunt test"
+        "prepare": "npm run build",
+        "build": "webpack --config webpack.config.js",
+        "test": "ava-ts src/**/*.spec.ts"
     },
     "devDependencies": {
-        "chai": "*",
-        "mocha": "*",
-        "coffee": "*",
-        "coffee-script": "*",
-        "grunt": "*",
-        "grunt-cli": "*",
-        "grunt-contrib-watch": "*",
-        "grunt-contrib-coffee": "*",
-        "grunt-coffeelint": "*",
-        "grunt-mocha-test": "*"
+        "ava-ts": "^0.24.2",
+        "awesome-typescript-loader": "^3.4.1",
+        "ts-node": "^4.1.0",
+        "typescript": "^2.7.2",
+        "webpack": "^3.11.0"
     }
 }

@@ -1,7 +1,6 @@
 # restricted-number
 
 A nice little tool to keep your numbers in a certain range. This was primarily designed for game developers with data like HP, MP, etc that should be kept within a range.
-It also provides a `booster` utility to add extra data that doesn't count towards the maximum, like a buff or debuff would.
 
 Why use this? It saves you from typing this over and over:
 
@@ -34,12 +33,6 @@ Install with npm:
 npm install --save restricted-number
 ```
 
-Install with bower:
-
-```
-bower install --save restricted-number
-```
-
 ## Testing
 
 From the repo root:
@@ -49,18 +42,10 @@ npm install
 npm test
 ```
 
-## Developing
-
-From the repo root:
-
-```
-grunt dev
-```
-
 ## Functions
 Function | Description
 -------- | -----------
- new RestrictedNumber(min, max, current, booster) | construct a RestrictedNumber
+ new RestrictedNumber(min, max, current) | construct a RestrictedNumber
  set(num) | set the datum to `num` - mostly used internally
  add(num) | add `num` to the datum
  sub(num) | subtract `num` from the datum
@@ -68,20 +53,17 @@ Function | Description
  subUnderMinimum(num) | subtract `num` from both the datum and the range
  toMaximum() | set the datum to the max value
  toMinimum() | set the datum to the min value
- getTotal(), getValue() | get the current value of the datum
  atMaximum() | returns `true` if the datum is at the maximum
  atMinimum() | returns `true` if the datum is at the minimum
- equals(num) | returns `true` if the datum equals `num`
- greaterThan(num) | returns `true` if the datum is greater than `num`
+ gt(num) | returns `true` if the datum is greater than `num`
  gte(num) | returns `true` if the datum is greater than or equal to `num`
- lessThan(num) | returns `true` if the datum is less than `num`
+ lt(num) | returns `true` if the datum is less than `num`
  lte(num) | returns `true` if the datum is less than `num`
  setToPercent(perc) | set the datum to be at `perc` (the range between min and max)
  addPercent(perc) | add `perc` of the datum's `maximum` value to the datum
  subPercent(perc) | subtract `perc` of the datum's `maximum` value from the datum
  asPercent() | get the value of the datum as a percentage
- greaterThanPercent(perc) | returns `true` if datum as a percentage of `maximum` is greater than `perc`
+ gtPercent(perc) | returns `true` if datum as a percentage of `maximum` is greater than `perc`
  gtePercent(perc) | returns `true` if datum as a percentage of `maximum` is greater than or equal to`perc`
- lessThanPercent(perc) | returns `true` if datum as a percentage of `maximum` is less than `perc`
+ ltPercent(perc) | returns `true` if datum as a percentage of `maximum` is less than `perc`
  ltePercent(perc) | returns `true` if datum as a percentage of `maximum` is less than or equal to `perc`
- equalsPercent(perc) | returns `true` if datum as a percentage of `maximum` is equal to `perc`
