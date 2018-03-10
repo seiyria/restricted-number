@@ -2,7 +2,7 @@
     "title": "restricted-number",
     "name": "restricted-number",
     "description": "A utility to keep numbers within a range.",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
     "homepage": "https://github.com/seiyria/restricted-number",
