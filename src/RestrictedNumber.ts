@@ -97,7 +97,7 @@ export class RestrictedNumber {
     }
 
     public asPercent(): number {
-        return Math.floor(this.total * (this.maximum / 100));
+        return Math.floor((this.total / this.maximum) * 100);
     }
 
     // percentage checking functions
