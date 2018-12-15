@@ -67,3 +67,9 @@ Function | Description
  gtePercent(perc) | returns `true` if datum as a percentage of `maximum` is greater than or equal to`perc`
  ltPercent(perc) | returns `true` if datum as a percentage of `maximum` is less than `perc`
  ltePercent(perc) | returns `true` if datum as a percentage of `maximum` is less than or equal to `perc`
+ 
+ ### Other languages
+ Language | Link
+ -------- | -----------
+ C++ | https://github.com/Oipo/restricted-number-cpp
+ BYOND | https://github.com/BYOND/restricted-number
